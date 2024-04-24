@@ -7,5 +7,6 @@
 This will ping the MARTA GTFS real-time feed and save one .json from each to GCP project --> GCS bucket
 
 ```bash
+cd marta_realtime
 python3 get_data.py --project-id YOUR_GCP_PROJECT_ID --bucket-name YOUR_BUCKET_NAME --feeds trip,vehicle
 ```

@@ -4,7 +4,7 @@ from datetime import datetime
 from argparse import ArgumentParser, Action
 
 # Local
-from constants import FEED_NAME_TO_URL
+from marta_realtime.constants import FEED_NAME_TO_URL
 
 # PyPI libraries
 import requests
