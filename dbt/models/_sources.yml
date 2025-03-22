@@ -4,11 +4,11 @@ sources:
   - name: marta_realtime_data
     database: data-projects-348920
     tables:
-      - name: vehicle
-        external:
-          location: gs://marta-realtime-data/vehicle/*.json
-          format: JSON
       - name: trip
         external:
           location: gs://marta-realtime-data/trip/*.json
+          format: JSON
+      - name: vehicle
+        external:
+          location: gs://marta-realtime-data/vehicle/*.json
           format: JSON

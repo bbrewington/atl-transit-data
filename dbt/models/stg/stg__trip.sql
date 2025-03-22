@@ -15,5 +15,11 @@ SELECT
   -- b.tripUpdate.trip.startTime as trip_start_time2,
   b.tripUpdate.trip.scheduleRelationship as trip_schedule_relationship,
   -- b.tripUpdate.trip.tripId as trip_id2,
-FROM `data-projects-348920.marta_realtime_data.trip` as a
+  c.stopSequence as stop_sequence,
+  -- ifnull(c.stopTimeProperties, '') as stopTimeProperties,
+  c.stopId as stop_id,
+  timestamp_seconds(c.departure.time) as departure_time,
+  timestamp_seconds(c.arrival.time) as arrival_time,
+FROM {{ source('marta_realtime_data', 'trip') }} as a
 cross join unnest(a.entity) as b
+cross join unnest(b.tripUpdate.stopTimeUpdate) as c

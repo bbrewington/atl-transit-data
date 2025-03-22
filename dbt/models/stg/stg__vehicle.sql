@@ -17,5 +17,6 @@ select
   b.vehicle.trip.routeId,
   b.vehicle.trip.startDate,
   b.vehicle.trip.tripId,
-from `marta_realtime_data.vehicle` as a
+  ST_GEOGPOINT(b.vehicle.position.longitude, b.vehicle.position.latitude) as geom_point
+from {{ source('marta_realtime_data', 'vehicle') }} as a
 cross join unnest(a.entity) as b
