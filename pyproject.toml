@@ -1,0 +1,9 @@
+[project]
+name = "atl-transit-data"
+version = "0.1.0"
+description = "Ingesting and Transforming Atlanta Transit Data"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-bigquery==1.9.1",
+]
