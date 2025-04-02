@@ -6,4 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "dbt-bigquery==1.9.1",
+    "google-cloud-storage>=2.19.0",
+    "gtfs-realtime-bindings>=1.0.0",
+    "requests>=2.32.3",
 ]
